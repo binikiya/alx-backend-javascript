@@ -1,17 +1,16 @@
 /**
- * Retrieves students in a given location.
+ * Retrieves ids from a list of students.
  * @param {{
  *   id: Number,
  *   firstName: String,
  *   location: String
  * }[]} students - The list of students.
- * @param {String} city - The location.
  * @author Biniyam Tamene <https://github.com/binikiya>
  * @returns
  */
-export default function getStudentsByLocation(students, city) {
+export default function getListStudentIds(students) {
   if (students instanceof Array) {
-    return students.filter((student) => student.location === city);
+    return students.map((student) => student.id);
   }
   return [];
 }
